@@ -4,6 +4,8 @@ Please include a summary of the changes and the related issue. Please also inclu
 
 Fixes # (issue)
 
+## Screenshots or Video of Proof of concept: What is was before/What was fixed.
+
 ## Type of change
 
 Please delete options that are not relevant.
