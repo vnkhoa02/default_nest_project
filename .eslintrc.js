@@ -6,10 +6,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   root: true,
   env: {
     node: true,
@@ -30,10 +27,7 @@ module.exports = {
       },
     ],
     // Require explicit return types on functions
-    '@typescript-eslint/explicit-function-return-type': [
-      'error',
-      { allowExpressions: true },
-    ],
+    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
     // Require explicit return types on functions and class methods
     '@typescript-eslint/explicit-module-boundary-types': 'error',
     // Disallow the use of the "any" type
@@ -52,5 +46,7 @@ module.exports = {
     '@typescript-eslint/no-unsafe-return': 'error',
     // Disallow the use of require statements
     '@typescript-eslint/no-var-requires': 'error',
+    // Disallow unused expressions
+    'no-unused-vars': ['error', { vars: 'all' }],
   },
 };
