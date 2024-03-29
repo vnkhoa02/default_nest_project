@@ -19,8 +19,9 @@
     "test:coverage-check": "npm run test:cov && npx ts-node coverage_check.ts",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
+    "sonar:scan": "npx sonarqube-scanner",
     "postinstall": "husky install",
-    "pre-commit": "npm run test:coverage-check && lint-staged"
+    "pre-commit": "npm run sonar:scan && npm run test:coverage-check && lint-staged"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
