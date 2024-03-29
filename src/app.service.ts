@@ -7,7 +7,6 @@ export class AppService {
   }
 
   getGoodbye(): string {
-    const foo: string = null;
-    return 'Goodbye World!' + foo;
+    return 'Goodbye World!';
   }
 }
