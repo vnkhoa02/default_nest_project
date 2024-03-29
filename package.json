@@ -22,7 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "sonar:scan": "npx sonarqube-scanner",
     "postinstall": "husky install",
-    "pre-commit": "npm run test:coverage-check && lint-staged"
+    "pre-commit": "npm run test:coverage-check && lint-staged && npm run lint:markdown"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -83,9 +83,6 @@
       "npm run lint",
       "npm run format",
       "git add ."
-    ],
-    "*.md": [
-      "npm run lint:markdown"
     ]
   }
 }
