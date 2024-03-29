@@ -13,6 +13,7 @@
     "start:debug": "npm run lint && nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint:markdown": "npx ts-node markdownlint_check.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -21,7 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "sonar:scan": "npx sonarqube-scanner",
     "postinstall": "husky install",
-    "pre-commit": "npm run sonar:scan && npm run test:coverage-check && lint-staged"
+    "pre-commit": "npm run test:coverage-check && lint-staged && npm run lint:markdown"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -48,6 +49,7 @@
     "husky": "^8.0.2",
     "jest": "^29.5.0",
     "lint-staged": "^13.0.3",
+    "markdownlint": "^0.34.0",
     "prettier": "^2.8.8",
     "source-map-support": "^0.5.21",
     "supertest": "^6.3.3",
