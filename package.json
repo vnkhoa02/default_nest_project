@@ -13,6 +13,7 @@
     "start:debug": "npm run lint && nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint:markdown": "npx ts-node markdownlint_check.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -84,7 +85,7 @@
       "git add ."
     ],
     "*.md": [
-      "markdownlint"
+      "npm run lint:markdown"
     ]
   }
 }
