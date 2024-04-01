@@ -7,6 +7,9 @@ export class AppService {
   }
 
   getGoodbye(): string {
+    if ('a' == 'a') {
+      console.log('a is a');
+    }
     return 'Goodbye World!';
   }
 }
