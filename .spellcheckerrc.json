@@ -1,0 +1,3 @@
+{
+  "files": ["docs/general/**", "docs/api/**", "*.md", "!(.spellcheckerrc.json)", "!(spellchecker-dictionary)", "!(./package*)"]
+}

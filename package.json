@@ -14,6 +14,7 @@
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "lint:markdown": "npx ts-node markdownlint_check.ts",
+    "spellcheck-project": "spellchecker --config .spellcheckerrc.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -52,6 +53,7 @@
     "markdownlint": "^0.34.0",
     "prettier": "^2.8.8",
     "source-map-support": "^0.5.21",
+    "spellchecker-cli": "^6.2.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
@@ -79,6 +81,11 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
+    "*.md": [
+      "npm run lint:markdown",
+      "npm run spellcheck-project",
+      "git add ."
+    ],
     "*.ts": [
       "npm run lint",
       "npm run format",
