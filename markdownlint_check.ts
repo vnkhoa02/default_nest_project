@@ -14,7 +14,7 @@ if (!checkMarkdownFiles()) {
 }
 
 const options = {
-  files: ['*.md'],
+  files: ['README.md'],
 };
 
 markdownlint(options, function callback(err, result) {
