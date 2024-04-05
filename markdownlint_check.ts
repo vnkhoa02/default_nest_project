@@ -1,5 +1,5 @@
 import * as markdownlint from 'markdownlint';
-import fs from 'fs';
+import * as fs from 'fs';
 
 // Check if any Markdown files exist in the current directory
 function checkMarkdownFiles(): boolean {
