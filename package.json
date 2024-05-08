@@ -19,11 +19,12 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:coverage-check": "npm run test:cov && npx ts-node coverage_check.ts",
+    "test:change-only": "sh parallel.test.sh && npx ts-node coverage_check.ts",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "sonar:scan": "npx sonarqube-scanner",
     "postinstall": "husky install",
-    "pre-commit": "npm run test:coverage-check && lint-staged && npm run lint:markdown"
+    "pre-commit": "npm run test:change-only && lint-staged && npm run lint:markdown"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -61,7 +62,7 @@
     "typescript": "^5.1.3"
   },
   "engines": {
-    "node": ">18"
+    "node": ">18.0.0"
   },
   "jest": {
     "moduleFileExtensions": [
